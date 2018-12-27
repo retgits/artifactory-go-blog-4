@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Step2 - Collect Build Info"]
+  resolves = ["Step3 - Collect Build Info"]
 }
 
 action "Step1 - Build app" {
@@ -19,13 +19,13 @@ action "Step2 - Upload" {
   env = {
     CRED = "username"
   }
-  needs = ["Step1 - Publish package"]
+  needs = ["Step1 - Build app"]
 }
 
 action "Step3 - Collect Build Info" {
   uses = "retgits/actions/jfrog-cli-go@master"
   secrets = ["URL", "USER", "PASSWORD"]
-  args = ["build-collect-env my-build 2","build-publish my-build 2"]
+  args = ["build-collect-env my-build 2", "build-publish my-build 2"]
   env = {
     CRED = "username"
   }
