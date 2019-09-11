@@ -1,3 +1,3 @@
 # Sample project
 
-For a series of blog posts on how you can use the JFrog CLI, Artifactory, and GitHub Actions to build awesome software.
+The code that was originally in this repo has moved [here](https://github.com/retgits/artifactory-go-blog/tree/blog-4)
